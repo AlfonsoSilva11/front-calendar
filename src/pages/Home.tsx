@@ -1,15 +1,16 @@
 import Agenda from "@/components/Agenda"
-import { Link } from "react-router-dom"
 
 
-function Home(){
+
+const Home = () => {
   return (
-    <div className="bg-blue-800">
-        <Link className="bg-slate-900 px-3 py-1 rounded-md border"  to="/about">
-        Ir a about
-        </Link>
+    <>
+        <div >
+      <h1 className="text-black text-3xl">Agenda titulo</h1>
       <Agenda/>
-        </div>
+    </div>
+    </>
+
   )
 }
 
