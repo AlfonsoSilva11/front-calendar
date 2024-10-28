@@ -20,6 +20,8 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog"
+import { toast } from 'react-toastify'
+import { useNavigate } from 'react-router-dom'
 
 const locales = {
   'en-US': enUS,
@@ -62,6 +64,8 @@ export default function Agenda() {
       end: new Date(),
       necessities: '',
     })
+    console.log(newEvent)
+    toast.success("Se creo un evento")
   }
 
   const eventStyleGetter = (_event: Event) => {
@@ -77,6 +81,11 @@ export default function Agenda() {
     }
   }
 
+  const navigate = useNavigate()
+
+  const handleNavigate = () => {
+      navigate("/about")
+  } 
   return (
     <div className="container mx-auto p-4">
       <h1 className="text-2xl font-bold mb-4">Agenda Web</h1>
@@ -154,7 +163,7 @@ export default function Agenda() {
         endAccessor="end"
         style={{ height: 500 }}
         eventPropGetter={eventStyleGetter}
-        onSelectEvent={(event) => alert(`Evento: ${event.title}\nNecesidades: ${event.necessities}`)}
+        onSelectEvent={handleNavigate}
       />
     </div>
   )
