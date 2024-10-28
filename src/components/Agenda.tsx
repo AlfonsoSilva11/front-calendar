@@ -64,7 +64,7 @@ export default function Agenda() {
     })
   }
 
-  const eventStyleGetter = (event: Event) => {
+  const eventStyleGetter = (_event: Event) => {
     return {
       style: {
         backgroundColor: '#3174ad',
